@@ -1,0 +1,22 @@
+<div class="col-12">
+  <div class="container" style="padding-top: 10px">
+    <h1 class="h3 mb-4 col-4 font-weight-normal display-5">Please sign in</h1>
+    <img src="../../../assets/homework-icon.jpg"
+         alt="..."
+         class="float-right" width="350px">
+    <form>
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" class="form-control mb-4 col-4" [(ngModel)]="username" placeholder="Enter username"
+               name="username" autofocus required>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control mb-4 col-4" [(ngModel)]="password" placeholder="Enter password"
+               name="password" required>
+      </div>
+      <button (click)=login() class="btn btn-primary mb-4 col-4">Login</button>
+    </form>
+  </div>
+</div>
+
