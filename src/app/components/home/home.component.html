@@ -1,0 +1,136 @@
+<div class="container">
+  <div class="main-body">
+
+    <div class="row gutters-sm">
+      <div class="col-md-4 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex flex-column align-items-center text-center">
+              <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle"
+                   width="150">
+              <div class="mt-3">
+                <h4>{{user.firstName}} {{user.lastName}}</h4>
+                <p class="text-secondary mb-1">{{user.username}}</p>
+                <p class="text-muted font-size-sm">{{user.department}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card bg-light mb-3" style="padding-top: 10px">
+          <div class="card-header text-center">Notification</div>
+          <div class="card-body">
+            <p class="card-text">Sample Notification</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <div class="card mb-3">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Full Name</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{user.firstName}} {{user.lastName}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Email</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{user.email}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Phone</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{user.mobile}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Department</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{user.department}}
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <h6 class="mb-0">Address</h6>
+              </div>
+              <div class="col-sm-9 text-secondary">
+                {{user.address}}
+              </div>
+            </div>
+            <hr>
+          </div>
+        </div>
+
+        <div class="row gutters-sm">
+          <div class="col-sm-6 mb-3">
+            <div class="card h-100">
+              <div class="card-body">
+                <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2"></i>Assignment</h6>
+                <table class="table">
+                  <thead>
+                  <tr>
+                    <th scope="col">Course</th>
+                    <th scope="col">Pending Date</th>
+                    <th scope="col">Delete</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let assignmentItem of assignmentCourse">
+                    <td>{{assignmentItem.courseName}}</td>
+                    <td>{{assignmentItem.assignmentPendingDate}}</td>
+                    <td>
+                      <button class="btn btn-danger" (click)="deleteAssignment(assignmentItem)">Remove</button>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 mb-3">
+            <div class="card h-100">
+              <div class="card-body">
+                <h6 class="d-flex align-items-center mb-3"><i class="material-icons text-info mr-2"></i>Add Assignment
+                </h6>
+
+
+                <div class="form-group pt-3">
+                  <div class="form-floating">
+                    <input type="text" class="form-control" placeholder="Assignment Name"
+                           [(ngModel)]="assignmentName" required/>
+                    <label class="text-danger">Assignment Name*</label>
+                  </div>
+                  <div class="form-floating mt-3">
+                    <input type="date" class="form-control" placeholder="Pending Date"
+                           [(ngModel)]="pendingDate" required/>
+                    <label class="text-danger">Assignment Date*</label>
+                  </div>
+
+                  <button class="btn btn-primary mt-3 w-100" (click)="addAssignment()">Add</button>
+                </div>
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+</div>
