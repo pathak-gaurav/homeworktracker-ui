@@ -21,6 +21,7 @@ export class SignupComponent implements OnInit {
   mobile: string = '';
   department: string = '';
   responseFlag: boolean = false;
+  message: string = '';
 
   ngOnInit(): void {
   }
@@ -34,16 +35,19 @@ export class SignupComponent implements OnInit {
     user.department = this.department;
     user.address = this.address;
     user.firstName = this.firstName;
-    user.lastName = this.email;
+    user.lastName = this.lastName;
     this.loginService.signupService(user).subscribe(() => {
-    }, (err: any) => {
+      this.responseFlag = true;
+      this.message = 'Account Created'
+    }, (err) => {
+        this.message = err.error;
     });
     this.responseFlag = true;
     this.username = '';
     this.password = '';
     this.firstName = '';
     this.lastName = '';
-    this.email= '';
+    this.email = '';
     this.address = '';
     this.mobile = '';
     this.department = '';

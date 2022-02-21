@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpEvent} from "@angular/common/http";
 import {User} from "../common/user";
 import {Observable} from "rxjs";
 import {AssignmentPending} from "../common/assignment-pending";
@@ -65,8 +65,8 @@ export class LoginService {
     sessionStorage.removeItem('username')
   }
 
-  signupService(user: User) : Observable<any>{
+  signupService(user: User) : Observable<HttpEvent<any>>{
     const addUserUrl = `${this.baseUrl}/user`;
-    return this.httpclient.post<User>(addUserUrl, user);
+    return this.httpclient.post<any>(addUserUrl, user);
   }
 }
