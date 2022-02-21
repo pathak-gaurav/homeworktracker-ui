@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   username: string = '';
   password: string = '';
   validLogin = false;
-  loginError: string='';
+  loginError: string = '';
 
   constructor(private loginService: LoginService,
               private router: Router) {
@@ -23,8 +23,9 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.validLogin = this.loginService.authenticate(this.username, this.password);
-    if(this.validLogin){
+    if (this.validLogin) {
       this.router.navigateByUrl('/home');
     }
   }
+
 }

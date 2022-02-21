@@ -10,7 +10,8 @@ import {AssignmentPending} from "../common/assignment-pending";
 export class LoginService {
 
   user: User = new User();
-  private baseUrl = 'http://localhost:8081';
+   private baseUrl = 'http://localhost:8081';
+  // private baseUrl = 'https://homeworktracker-backend.herokuapp.com';
 
   constructor(private httpclient: HttpClient) {
   }
@@ -62,5 +63,10 @@ export class LoginService {
 
   logOut() {
     sessionStorage.removeItem('username')
+  }
+
+  signupService(user: User) : Observable<any>{
+    const addUserUrl = `${this.baseUrl}/user`;
+    return this.httpclient.post<User>(addUserUrl, user);
   }
 }

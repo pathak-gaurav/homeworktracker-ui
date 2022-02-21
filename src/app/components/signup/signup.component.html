@@ -1,0 +1,55 @@
+<div class="col-12">
+  <div class="container" style="padding-top: 10px">
+    <h1 class="h3 mb-4 col-4 font-weight-normal display-5">Please signup</h1>
+    <img src="../../../assets/homework-icon.jpg"
+         alt="..."
+         class="float-right" width="350px">
+    <form>
+      <div class="form-group">
+        <label>First Name</label>
+        <input type="text" class="form-control mb-4 col-4" [(ngModel)]="firstName" placeholder="Enter username"
+               name="firstname" autofocus required>
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" class="form-control mb-4 col-4" [(ngModel)]="lastName" placeholder="Enter username"
+               name="lastname" autofocus required>
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control mb-4 col-4" [(ngModel)]="email" placeholder="Enter username"
+               name="email" autofocus required>
+      </div>
+      <div class="form-group">
+        <label>Address</label>
+        <input type="text" class="form-control mb-4 col-4" [(ngModel)]="address" placeholder="Enter username"
+               name="address" autofocus required>
+      </div>
+      <div class="form-group">
+        <label>Mobile No.</label>
+        <input type="text" class="form-control mb-4 col-4" [(ngModel)]="mobile" placeholder="Enter username"
+               name="mobile" autofocus required>
+      </div>
+      <div class="form-group">
+        <label>Department</label>
+        <input type="text" class="form-control mb-4 col-4" [(ngModel)]="department" placeholder="Enter username"
+               name="department" autofocus required>
+      </div>
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" class="form-control mb-4 col-4" [(ngModel)]="username" placeholder="Enter username"
+               name="username" autofocus required>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control mb-4 col-4" [(ngModel)]="password" placeholder="Enter password"
+               name="password" required>
+      </div>
+      <button (click)=signup() class="btn btn-primary mb-4 col-4">signup</button>
+    </form>
+    <br>
+
+    Back to login page  <button class="btn btn-primary mb-1 col-1" routerLink="/login">login</button>
+  </div>
+</div>
+

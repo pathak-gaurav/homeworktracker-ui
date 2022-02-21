@@ -13,10 +13,12 @@ import {HttpClientModule} from "@angular/common/http";
 import {RouterModule, Routes} from "@angular/router";
 import {CommonModule} from "@angular/common";
 import {AuthenticationGuardService} from "./services/authentication-guard.service";
+import { SignupComponent } from './components/signup/signup.component';
 
 const routes: Routes = [
   {path: '', component: LoginComponent},
   {path: 'home', component: HomeComponent, canActivate:[AuthenticationGuardService]},
+  {path: 'signup', component: SignupComponent},
   {path: 'login', component: LoginComponent},
   {path: 'logout', component: LogoutComponent, canActivate:[AuthenticationGuardService]},
 ]
@@ -28,7 +30,8 @@ const routes: Routes = [
     FooterComponent,
     HomeComponent,
     LoginComponent,
-    LogoutComponent
+    LogoutComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
