@@ -4,6 +4,13 @@
     <img src="../../../assets/homework-icon.jpg"
          alt="..."
          class="float-right" width="350px">
+
+    <div *ngIf="responseFlag" style="color:green" class="card">
+      <div class="card-body">
+        Account Created
+      </div>
+    </div>
+
     <form>
       <div class="form-group">
         <label>First Name</label>

@@ -20,6 +20,7 @@ export class SignupComponent implements OnInit {
   address: string = '';
   mobile: string = '';
   department: string = '';
+  responseFlag: boolean = false;
 
   ngOnInit(): void {
   }
@@ -37,5 +38,14 @@ export class SignupComponent implements OnInit {
     this.loginService.signupService(user).subscribe(() => {
     }, (err: any) => {
     });
+    this.responseFlag = true;
+    this.username = '';
+    this.password = '';
+    this.firstName = '';
+    this.lastName = '';
+    this.email= '';
+    this.address = '';
+    this.mobile = '';
+    this.department = '';
   }
 }
